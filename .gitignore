@@ -1,0 +1,8 @@
+.venv/
+__pycache__/
+*.pyc
+data.db
+data.db-*
+.env
+local_server.*.log
+build_info.txt
