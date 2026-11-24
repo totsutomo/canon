@@ -10,8 +10,7 @@
   --kako:#a85d0d; --kako-bg:#fbeedd;
   --negai:#56605c; --negai-bg:#e9eceb;
   --other:#1f7a53; --other-bg:#e2f3ec;
-  --font-body:"Noto Sans JP","Yu Gothic UI",system-ui,-apple-system,sans-serif;
-  --font-display:"Zen Old Mincho","Noto Serif JP","Yu Mincho",serif;
+  --font-body:-apple-system,BlinkMacSystemFont,"Segoe UI","Hiragino Sans","Noto Sans JP","Yu Gothic UI",sans-serif;
   color-scheme:light;
 }
 @media (prefers-color-scheme: dark){
@@ -94,7 +93,7 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,a:focus-visible{
 
 /* Common Controls & Cards */
 .page-head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}
-.page-head h1{margin:0;font-family:var(--font-display);font-size:1.55rem}
+.page-head h1{margin:0;font-size:1.5rem;font-weight:700;letter-spacing:-.01em}
 .search-bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:14px}
 .search-input{flex:1 1 220px;max-width:340px;min-height:44px;padding:8px 12px;border:1px solid var(--line);border-radius:10px;background:var(--surface);font-size:1rem}
 .chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
@@ -113,17 +112,17 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,a:focus-visible{
 
 /* Reference Sections (Kobun / Kanbun imported markup) */
 .ref-sec{margin-bottom:28px}
-.ref-sec h2{font-family:var(--font-display);font-size:1.3rem;margin:0 0 8px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+.ref-sec h2{font-size:1.25rem;font-weight:700;letter-spacing:-.01em;margin:0 0 8px;padding-bottom:6px;border-bottom:1px solid var(--line)}
 .sec-lead{color:var(--muted);font-size:.9rem;margin:0 0 14px}
 .tablebox{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--surface);margin-bottom:16px}
 .ref-sec table{border-collapse:collapse;width:100%;min-width:760px;font-size:.9rem}
 .ref-sec th,.ref-sec td{padding:8px 10px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
 .ref-sec thead th{background:var(--accent-soft);font-size:.8rem;white-space:nowrap}
 .ref-sec tr.group td{background:var(--accent-soft);font-weight:700;font-size:.84rem}
-.ref-sec td.name{font-family:var(--font-display);font-size:1.1rem;font-weight:700;white-space:nowrap}
-.ref-sec td.form{font-family:var(--font-display);white-space:nowrap}
+.ref-sec td.name{font-size:1.05rem;font-weight:700;white-space:nowrap}
+.ref-sec td.form{white-space:nowrap}
 .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
-.big{font-family:var(--font-display);font-size:1.15rem;color:var(--accent);margin-right:8px}
+.big{font-size:1.1rem;font-weight:700;color:var(--accent);margin-right:8px}
 .tag{display:inline-block;border-radius:4px;padding:2px 7px;font-size:.78rem;margin:0 4px 3px 0;white-space:nowrap}
 .k-suiryou{background:var(--suiryou-bg);color:var(--suiryou)}
 .k-kako{background:var(--kako-bg);color:var(--kako)}
@@ -153,10 +152,10 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,a:focus-visible{
 .qz-bar i{display:block;height:100%;background:var(--accent);border-radius:999px}
 .qz-src{font-size:.82rem;color:var(--muted);margin-bottom:4px}
 .qz-instr{font-size:.92rem;color:var(--muted);margin-bottom:8px}
-.qz-sent{font-family:var(--font-display);font-size:1.22rem;line-height:1.85;margin-bottom:10px}
+.qz-sent{font-size:1.16rem;font-weight:500;line-height:1.85;margin-bottom:10px}
 .qz-sent u{text-decoration-color:var(--accent);text-underline-offset:4px}
 .qz-gloss{font-size:.84rem;color:var(--muted);background:var(--surface2);padding:6px 10px;border-radius:8px;margin-bottom:12px}
-.qz-q{font-family:var(--font-display);font-size:1.15rem;line-height:1.75;margin-bottom:14px}
+.qz-q{font-size:1.1rem;font-weight:600;line-height:1.75;margin-bottom:14px}
 .qz-opts{display:grid;gap:8px}
 .qz-opt{min-height:48px;display:flex;gap:12px;align-items:center;text-align:left;padding:10px 14px;border:1px solid var(--line);border-radius:10px;background:var(--surface);cursor:pointer;font-size:.96rem}
 .qz-opt:not([aria-disabled="true"]):hover{border-color:var(--accent)}

@@ -6,3 +6,5 @@ data.db-*
 .env
 local_server.*.log
 build_info.txt
+
+.vercel
