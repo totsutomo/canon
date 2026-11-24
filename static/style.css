@@ -121,8 +121,28 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,a:focus-visible{
 .ref-sec tr.group td{background:var(--accent-soft);font-weight:700;font-size:.84rem}
 .ref-sec td.name{font-size:1.05rem;font-weight:700;white-space:nowrap}
 .ref-sec td.form{white-space:nowrap}
-.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+.cards,.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:14px}
 .big{font-size:1.1rem;font-weight:700;color:var(--accent);margin-right:8px}
+.ref-sec .card p{margin:6px 0;font-size:.9rem}
+.ref-sec .card ul{margin:6px 0 0;padding-left:1.25em;font-size:.9rem}
+.ref-sec .card li{margin:3px 0}
+details.exd{margin-top:10px}
+details.exd summary{cursor:pointer;color:var(--accent);font-size:.84rem;font-weight:600;width:fit-content;border:1px solid var(--line);border-radius:999px;padding:3px 12px;list-style:none}
+details.exd summary::-webkit-details-marker{display:none}
+details.exd[open] summary{background:var(--accent);border-color:var(--accent);color:var(--accent-fg)}
+.exlist{display:grid;grid-template-columns:1fr;gap:8px;margin-top:10px}
+.exitem{display:flex;gap:10px;align-items:flex-start;min-width:0;background:var(--surface2);border:1px solid var(--line);border-radius:8px;padding:8px 10px}
+.exlabel{background:var(--accent-soft);color:var(--accent);flex:none;border-radius:4px;padding:2px 6px;font-size:.76rem;font-weight:600}
+.exbody{min-width:0;white-space:normal}
+.exbody .jp{font-size:.96rem;font-weight:700;line-height:1.6}
+.exbody .tr{font-size:.84rem;margin:2px 0 3px}
+.exbody .com{font-size:.8rem;color:var(--muted)}
+tr.ex{display:none}
+tr.ex.open{display:table-row}
+tr.ex td{background:var(--surface2);padding:10px 12px}
+.exbtn{display:block;margin-top:4px;border:1px solid var(--line);background:var(--surface);color:var(--accent);border-radius:999px;padding:2px 10px;font-size:.74rem;font-weight:600;cursor:pointer;white-space:nowrap}
+.exbtn[aria-expanded="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-fg)}
+mark.hl{background:var(--warn-bg);color:var(--warn);border-radius:3px;padding:0 3px;font-weight:700}
 .tag{display:inline-block;border-radius:4px;padding:2px 7px;font-size:.78rem;margin:0 4px 3px 0;white-space:nowrap}
 .k-suiryou{background:var(--suiryou-bg);color:var(--suiryou)}
 .k-kako{background:var(--kako-bg);color:var(--kako)}

@@ -296,7 +296,18 @@
         const el = main.querySelector("#" + id);
         if (el) el.innerHTML = inner;
       });
-      main.querySelectorAll(".controls").forEach((el) => { el.style.display = "none"; });
+      main.querySelectorAll(".controls, #kchips").forEach((el) => { el.style.display = "none"; });
+      main.querySelectorAll(".ref-sec tbody").forEach((tbody) => {
+        tbody.addEventListener("click", (ev) => {
+          const btn = ev.target.closest(".exbtn");
+          if (!btn) return;
+          const nextRow = btn.closest("tr")?.nextElementSibling;
+          if (!nextRow || !nextRow.classList.contains("ex")) return;
+          const open = !nextRow.classList.contains("open");
+          nextRow.classList.toggle("open", open);
+          btn.setAttribute("aria-expanded", String(open));
+        });
+      });
     }
 
     // Apply search filter to rows and cards

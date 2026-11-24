@@ -186,12 +186,33 @@ for (const [fmt, arr] of Object.entries(kn.sandbox.POOL)) {
 }
 const kanbunSections = extractSections(kn.html, ['quiz']);
 const kanbunTables = {};
-for (const id of ['tb-sai', 'tb-kuho', 'tb-joji', 'cards-sai', 'cards-kuho', 'cards-joji', 'cards-tips']) {
+for (const id of ['saiBody', 'kuhoBody', 'jojiBody']) {
   if (kn.elements[id] && kn.elements[id].innerHTML) {
     kanbunTables[id] = kn.elements[id].innerHTML;
   }
 }
-const kanbunCards = extractCardMap(kn.html);
+const escHtml = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const kanbunCards = {};
+const cardDefs = [
+  ['saiCards', kn.sandbox.CARDS_SAI],
+  ['kuhoCards', kn.sandbox.CARDS_KUHO],
+  ['jojiCards', kn.sandbox.CARDS_JOJI],
+  ['tipsCards', kn.sandbox.CARDS_TIPS]
+];
+for (const [id, list] of cardDefs) {
+  if (!Array.isArray(list)) continue;
+  kanbunTables[id] = list.map(c => {
+    const ex = kn.sandbox.EXC && kn.sandbox.EXC[c.k];
+    let exHtml = '';
+    if (Array.isArray(ex) && ex.length && typeof kn.sandbox.exItemHtml === 'function') {
+      exHtml = '<details class="exd"><summary>例文を見る</summary><div class="exlist">' +
+        ex.map(e => kn.sandbox.exItemHtml(e)).join('') + '</div></details>';
+    }
+    const inner = '<h3><span class="big">' + escHtml(c.k) + '</span>' + escHtml(c.t || '') + '</h3>' + (c.h || '') + exHtml;
+    if (c.k && !kanbunCards[c.k]) kanbunCards[c.k] = inner;
+    return '<div class="card">' + inner + '</div>';
+  }).join('');
+}
 
 const payload = {
   meta: {
